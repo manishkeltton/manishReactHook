@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import BasicForm from './components/forms/BasicForm';
 import RulesHook from './components/RulesHook';
+import ShortCircuitEval from './components/ShortCircuitEval';
 import UseStateArray from './components/UseStateArray';
 import UseStateObject from './components/UseStateObject';
 
@@ -35,7 +37,9 @@ const App = () => {
       <button onClick={changeValue}>Click Me</button>
       <RulesHook /> */}
       {/* <UseStateArray /> */}
-      <UseStateObject />
+      {/* <UseStateObject /> */}
+      {/* <ShortCircuitEval /> */}
+      <BasicForm />
     </div>
   )
 }

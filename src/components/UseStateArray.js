@@ -16,6 +16,13 @@ const UseStateArray = () => {
     const clearData = () => {
         setData([])
     }
+    const removeEl = (id) =>{
+         //alert(id) 
+         const myNewArray = data.filter((curEl) => {
+             return curEl.id !== id;
+         })
+         setData(myNewArray);
+    }
 
     console.log(bioData);
 
@@ -24,10 +31,11 @@ const UseStateArray = () => {
             {/* <h1>I am Manish</h1> */}
             {
                 data.map((curEl)=>
-                     <h1 key={curEl.id}>Name: {curEl.name} : Age:{curEl.age}</h1>
+                     <h1 key={curEl.id}>Name: {curEl.name} : Age:{curEl.age} 
+                     <button onClick={() => removeEl(curEl.id)}>remove</button></h1>
                 )
             }
-            <button onClick={clearData}>clear</button>
+            <button onClick={() => clearData()}>clear</button>
         </>
     )
 }
