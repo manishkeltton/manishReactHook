@@ -1,7 +1,15 @@
 import React, { useState } from 'react'
 import BasicForm from './components/forms/BasicForm';
+import Uncontrolled from './components/forms/Uncontrolled';
 import RulesHook from './components/RulesHook';
 import ShortCircuitEval from './components/ShortCircuitEval';
+import Test from './components/Test';
+import ComA from './components/useContext/ComA';
+import UseEffectAPI from './components/useEffect/UseEffectAPI';
+import UseEffects1 from './components/useEffect/UseEffects1';
+import UseEffects2 from './components/useEffect/UseEffects2';
+import ReducerContext from './components/useReducer/ReducerContext';
+import UseReducer from './components/useReducer/UseReducer';
 import UseStateArray from './components/UseStateArray';
 import UseStateObject from './components/UseStateObject';
 
@@ -39,7 +47,15 @@ const App = () => {
       {/* <UseStateArray /> */}
       {/* <UseStateObject /> */}
       {/* <ShortCircuitEval /> */}
-      <BasicForm />
+      {/* <BasicForm /> */}
+      {/* <UseEffects1 /> */}
+      {/* <UseEffects2 /> */}
+      {/* <UseEffectAPI /> */}
+      {/* <Uncontrolled /> */}
+      {/* <UseReducer /> */}
+      {/* <ReducerContext /> */}
+       {/* <ComA /> */}
+      <Test />
     </div>
   )
 }

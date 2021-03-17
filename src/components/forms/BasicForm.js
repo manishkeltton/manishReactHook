@@ -3,13 +3,20 @@ import React, { useState } from 'react'
 const BasicForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [newEntry, setNewEntry] = useState([]);
+    const [allEntry, setAllEntry] = useState([]);
 
     const submitForm = (e) => {
         e.preventDefault();//It is prevent auto refresh html page
-        const Entry = {email:email,password: password}
-        setNewEntry([...newEntry, Entry])
-        console.log(newEntry);
+        if(email && password){
+            const newEntry = { id: new Date().getTime().toString(), email:email, password:password }
+            // const newEntry = { id: new Date().getTime().toString(), email, password }
+            setAllEntry([...allEntry, newEntry])
+            console.log(allEntry);
+            setEmail("");
+            setPassword("");
+        }else {
+            alert("Fill the Data")
+        }
     }
 
     return (
@@ -34,9 +41,10 @@ const BasicForm = () => {
 
             <div>
                 {
-                   newEntry.map((curEl)=>{
+                   allEntry.map((curEl)=>{
+                       //const { id, email, password } = curEl
                        return(
-                           <div>
+                           <div key={curEl.id}>  
                                <p>{curEl.email}</p>
                                <p>{curEl.password}</p>
                            </div>
